@@ -17,14 +17,15 @@
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Get Data!</a></p>
     </div>
     <!-- <img src="{{ mars.sloth_img }}" alt="Sloth"> -->
-    <h2>Stuff should show up below</h2>
-    <h3>Title - {{mars.Title}}</h3>
-    <h3>Paragraph - {{mars.Paragraph}}</h3>
-    <h3>Todays featured image - <img src="{{mars.featured_image}}"></h3>
-    <h3>Facts about Mars</h3>
-    {{mars.Facts}}
+    <h2>Latest NASA News</h2>
+    <h3>{{mars.Title}}</h3>
+    {{mars.Paragraph}}
+    <h3>Todays featured image - <img width="500" src="{{mars.featured_image}}"></h3>
+    <h3>Facts about Mars and Earth</h3>
+    {{mars.Facts | safe}}<br>
 
-    <h3>{{mars.Hemispheres}}</h3>
+    {{mars.Hemispheres}}
+    <h3></h3>
     <h3></h3>
     <h3></h3>
   </div>
