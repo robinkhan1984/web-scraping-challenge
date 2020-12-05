@@ -18,16 +18,19 @@
     </div>
     <!-- <img src="{{ mars.sloth_img }}" alt="Sloth"> -->
     <h2>Latest NASA News</h2>
-    <h3>{{mars.Title}}</h3>
+    <h4>{{mars.Title}}</h4>
     {{mars.Paragraph}}
-    <h3>Todays featured image - <img width="500" src="{{mars.featured_image}}"></h3>
-    <h3>Facts about Mars and Earth</h3>
+    <h2>Todays featured image <Br><img width="500" src="{{mars.featured_image}}"></h3>
+    <h3>Facts about Mars and Earth</h2>
     {{mars.Facts | safe}}<br>
 
-    {{mars.Hemispheres}}
-    <h3></h3>
-    <h3></h3>
-    <h3></h3>
+    {%for hemisphere in mars.Hemispheres%}  
+    <h3>{{hemisphere.title}}</h3><br>
+    <img width = "300" src = "{{hemisphere.img_url}}"><br>
+    
+
+    {%endfor%}
+    
   </div>
   </div>
 </body>
