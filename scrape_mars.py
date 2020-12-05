@@ -12,7 +12,6 @@ def init_browser():
 
 def scrape():
     browser = init_browser()
-    listings = {}
 
     # URL of page to be scraped
     url = 'https://mars.nasa.gov/news/'
@@ -27,7 +26,7 @@ def scrape():
     results
     results2 = soup.find('div', class_='article_teaser_body').text
 
-    output = {
+    mars_data = {
     'Title' : results, 
     'Paragraph' : results2,
     }
@@ -48,7 +47,7 @@ def scrape():
     featured_image = 'https://www.jpl.nasa.gov' + picture
     featured_image
 
-    output["featured_image"] = featured_image
+    mars_data["featured_image"] = featured_image
 
     url = 'https://space-facts.com/mars/'
 
@@ -64,7 +63,7 @@ def scrape():
 
     mars_table
 
-    output["Facts"] = mars_table
+    mars_data["Facts"] = mars_table
 
     url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
     browser.visit(url)
@@ -92,8 +91,8 @@ def scrape():
         
     hemispheres
 
-    output["Hemispheres"] = hemispheres
+    mars_data["Hemispheres"] = hemispheres
 
     browser.quit()
 
-    return output
+    return mars_data
